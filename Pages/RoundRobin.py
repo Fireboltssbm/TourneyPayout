@@ -2,18 +2,19 @@ import streamlit as st
 
 st.header("Round Robin Calculator")
 st.subheader("Useful for determining Round Robin Pools Lengths")
+st.subheader("\nefficiency factor is 1.3")
 
 st.subheader('\n\n')
 
-efficiency_factor = st.number_input('Enter Effiency Factor', 0)
 average_time = st.number_input('Enter Average Time Per Set', 0)
 number_players = st.number_input('Enter Number of Players/Teams in Pool', 0)
 number_setups = st.number_input('Enter Number of Setups per pool', 1)
 
-total_time = (efficiency_factor*average_time*(number_players*number_players-1))/(2*number_setups)
+total_time = (1.3*average_time*(number_players*number_players-1))/(2*number_setups)
 
 
-st.header('total time needed for round robin pools is' + str(total_time))
+st.header('total time needed for round robin pools')
+st.subheader(total_time)
 
 
 
